@@ -10,7 +10,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/shubham-rajwar-bb8621215/",
   headline: "I write university content that students actually find on Google.",
   intro:
-    "I've spent 3+ years writing for Indian higher education. Today I run SEO content for university clients at Growthtrack: keyword research, briefs, blogs, landing pages and emailers, from first draft to the page that ranks.",
+    "I started as a technical writer at JavaTpoint, explaining Python, Java and SQL to developers. Today I run SEO content for university clients at Growthtrack: keyword research, briefs, blogs, landing pages and emailers, from first draft to the page that ranks.",
 };
 
 // Month the traffic numbers below were pulled from the tracking sheet.
@@ -123,6 +123,17 @@ export const experience = [
     points: [
       "Website copy, product listings and blogs for personal care and D2C healthcare brands.",
       "Content calendars and platform-specific copy for Instagram and LinkedIn.",
+    ],
+  },
+  {
+    role: "Technical Writer",
+    org: "JavaTpoint",
+    period: "Dec 2022 – Feb 2024",
+    place: "Noida",
+    points: [
+      "Wrote 100+ tutorials, guides and articles on Python, Java, C/C++ and SQL for a high-traffic developer education platform.",
+      "Applied on-page SEO so the tutorials were easier to find in organic search.",
+      "Researched and edited complex programming concepts until they were both accurate and easy to follow.",
     ],
   },
 ];
