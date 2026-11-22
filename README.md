@@ -12,9 +12,10 @@ npm run dev                  # http://localhost:3000
 
 ## Edit content
 
-Everything visible on the site lives in `data/site.ts`: the intro, samples, traffic numbers, experience and skills.
+Everything visible on the site lives in `data/site.ts`: the intro, work samples, experience and skills.
 
-- Numbers must come from your own tracking sheet. Set `metricsAsOf` to the month you pulled them.
+- The site shows no traffic figures, since they change month to month.
+- Card images live in `public/images/work/` (1280×720, client and title baked in). The homepage photo is `public/images/hero.jpg`. Photos are from Unsplash (free licence) or made in Canva.
 - Add a sample by copying an entry in `featuredSamples` or `moreSamples`.
 
 ## Blog (optional)

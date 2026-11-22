@@ -1,6 +1,6 @@
 // All portfolio content lives here. Edit this file to update the site.
-// Rule: every number must come from Shubham's own tracking sheet, and every
-// fact from the resume. Don't add stats, quotes or samples you can't back up.
+// Rule: every fact must come from the resume or Shubham's own records.
+// Don't add stats, quotes or samples you can't back up.
 
 export const profile = {
   name: "Shubham Rajwar",
@@ -8,97 +8,81 @@ export const profile = {
   location: "Noida, India",
   email: "shubhamrajwar05@gmail.com",
   linkedin: "https://www.linkedin.com/in/shubham-rajwar-bb8621215/",
-  headline: "I write content people find on Google, from developer tutorials to university guides.",
+  headline: "I write content people find on Google",
+  subline:
+    "I'm Shubham. I started out writing Python and Java tutorials at JavaTpoint. Now I write SEO content for universities, tech, finance and D2C brands.",
   intro:
     "I started as a technical writer at JavaTpoint, explaining Python, Java and SQL to developers. Since then I've written tech and finance explainers for Hero Vired, product copy for D2C healthcare brands, and SEO content for universities and an EdTech CRM. At Growthtrack I handle the whole process: keyword research, briefs, blogs, landing pages and emailers.",
 };
 
-// Month the traffic numbers below were pulled from the tracking sheet.
-// Replace the placeholder, e.g. "August 2026".
-export const metricsAsOf = "[ADD MONTH]";
+export type ArticleLink = { title: string; url: string; format: string };
 
 export type Sample = {
+  slug: string;
   client: string;
   title: string;
-  url: string;
-  format: string;
-  published?: string;
-  visits?: number;
-  impressions?: string;
-  note?: string;
+  summary: string;
+  image: string;
+  // A single article, or a set of articles for one client.
+  url?: string;
+  links?: ArticleLink[];
 };
 
-export const featuredSamples: Sample[] = [
+// Ordered as they appear on the site. No traffic figures: they change month
+// to month, so the site shows the work itself.
+export const samples: Sample[] = [
   {
+    slug: "snu-engineering-courses",
     client: "Shiv Nadar University",
     title: "10 best engineering courses for future careers in 2030 and beyond",
+    summary: "SEO blog for Shiv Nadar University, published Jan 2026.",
     url: "https://snu.edu.in/blogs/10-best-engineering-courses-for-future-careers-in-2030-beyond/",
-    format: "SEO blog",
-    published: "Jan 2026",
-    visits: 49759,
-    impressions: "2.18M",
+    image: "/images/work/snu-engineering-courses.jpg",
   },
   {
+    slug: "apollo-entrance-exams",
     client: "The Apollo University",
-    title: "Top entrance exams after 12th science in India 2026 (PCM and PCB)",
+    title: "Top entrance exams after 12th science in India 2026",
+    summary: "SEO blog for The Apollo University, published Jan 2026.",
     url: "https://apollouniversity.edu.in/blog/top-entrance-exams-after-12th-science-in-india-2026-pcm-pcb/",
-    format: "SEO blog",
-    published: "Jan 2026",
-    visits: 15499,
+    image: "/images/work/apollo-entrance-exams.jpg",
   },
   {
+    slug: "ruas-bsc-nursing",
     client: "M.S. Ramaiah University of Applied Sciences",
     title: "BSc Nursing course details: duration, fees and entrance exams",
+    summary: "SEO blog for M.S. Ramaiah University of Applied Sciences, published Feb 2026.",
     url: "https://www.msruas.ac.in/blog/bsc-nursing-course-details-duration-fees-entrance-exams",
-    format: "SEO blog",
-    published: "Feb 2026",
-    visits: 13924,
-    impressions: "2.37M",
+    image: "/images/work/ruas-bsc-nursing.jpg",
   },
   {
+    slug: "hero-vired-tech-finance",
+    client: "Hero Vired",
+    title: "Tech and finance explainers for Hero Vired",
+    summary: "Four articles on CI/CD pipelines, data analysis, object-oriented programming and equity research.",
+    image: "/images/work/hero-vired-tech-finance.jpg",
+    links: [
+      { title: "What is a CI/CD pipeline?", url: "https://herovired.com/learning-hub/blogs/what-is-ci-cd-pipeline/", format: "Technical explainer" },
+      { title: "Data analysis techniques", url: "https://herovired.com/learning-hub/blogs/data-analysis-techniques", format: "Technical explainer" },
+      { title: "How to become an equity research analyst", url: "https://herovired.com/learning-hub/blogs/equity-research-analyst/", format: "Career guide" },
+      { title: "4 pillars of OOP", url: "https://herovired.com/learning-hub/blogs/4-pillars-of-oop", format: "Technical explainer" },
+    ],
+  },
+  {
+    slug: "mahindra-engineering-exams",
     client: "Mahindra University",
     title: "List of engineering entrance exams in India after 12th (2026)",
+    summary: "SEO blog for Mahindra University, published Feb 2026.",
     url: "https://www.mahindrauniversity.edu.in/blog/list-of-engineering-entrance-exams-in-india-after-12th-2026/",
-    format: "SEO blog",
-    published: "Feb 2026",
-    visits: 3854,
-    impressions: "451.7k",
+    image: "/images/work/mahindra-engineering-exams.jpg",
   },
   {
+    slug: "bmu-cuet-syllabus",
     client: "BML Munjal University",
     title: "CUET UG syllabus",
+    summary: "SEO blog for BML Munjal University, published Nov 2025.",
     url: "https://www.bmu.edu.in/social/cuet-ug-syllabus/",
-    format: "SEO blog",
-    published: "Nov 2025",
-    visits: 952,
-    impressions: "600k",
-  },
-];
-
-export const moreSamples: Sample[] = [
-  {
-    client: "Hero Vired",
-    title: "What is a CI/CD pipeline?",
-    url: "https://herovired.com/learning-hub/blogs/what-is-ci-cd-pipeline/",
-    format: "Technical explainer",
-  },
-  {
-    client: "Hero Vired",
-    title: "Data analysis techniques",
-    url: "https://herovired.com/learning-hub/blogs/data-analysis-techniques",
-    format: "Technical explainer",
-  },
-  {
-    client: "Hero Vired",
-    title: "How to become an equity research analyst",
-    url: "https://herovired.com/learning-hub/blogs/equity-research-analyst/",
-    format: "Career guide",
-  },
-  {
-    client: "Hero Vired",
-    title: "4 pillars of OOP",
-    url: "https://herovired.com/learning-hub/blogs/4-pillars-of-oop",
-    format: "Technical explainer",
+    image: "/images/work/bmu-cuet-syllabus.jpg",
   },
 ];
 
