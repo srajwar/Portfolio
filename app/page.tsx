@@ -61,7 +61,7 @@ export default function Home() {
           <div className="section-head">
             <h2>Writing that ranks</h2>
             <p>
-              Published university blogs, with organic visits and search impressions from my own
+              My best-performing SEO blogs, with organic visits and search impressions from my own
               tracking sheet (as of {metricsAsOf}).
             </p>
           </div>
@@ -101,7 +101,7 @@ export default function Home() {
             ))}
           </ol>
 
-          <h3 className="sub">Beyond education: tech and finance explainers</h3>
+          <h3 className="sub">Tech and finance writing</h3>
           <ul className="more">
             {moreSamples.map((s) => (
               <li key={s.url}>
@@ -170,7 +170,7 @@ export default function Home() {
             <h2>Got a page that should be ranking?</h2>
             <p>
               Send me the topic and who it&apos;s for. I take on blogs, landing pages, content
-              audits and AEO rewrites, mostly for colleges and EdTech brands.
+              audits, technical explainers and AEO rewrites for tech, finance, education and D2C brands.
             </p>
             <ul className="contact-links">
               <li>

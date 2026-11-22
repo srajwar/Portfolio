@@ -8,9 +8,9 @@ export const profile = {
   location: "Noida, India",
   email: "shubhamrajwar05@gmail.com",
   linkedin: "https://www.linkedin.com/in/shubham-rajwar-bb8621215/",
-  headline: "I write university content that students actually find on Google.",
+  headline: "I write content people find on Google, from developer tutorials to university guides.",
   intro:
-    "I started as a technical writer at JavaTpoint, explaining Python, Java and SQL to developers. Today I run SEO content for university clients at Growthtrack: keyword research, briefs, blogs, landing pages and emailers, from first draft to the page that ranks.",
+    "I started as a technical writer at JavaTpoint, explaining Python, Java and SQL to developers. Since then I've written tech and finance explainers for Hero Vired, product copy for D2C healthcare brands, and SEO content for universities and an EdTech CRM. At Growthtrack I handle the whole process: keyword research, briefs, blogs, landing pages and emailers.",
 };
 
 // Month the traffic numbers below were pulled from the tracking sheet.

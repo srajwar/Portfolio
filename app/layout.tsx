@@ -4,7 +4,7 @@ import { profile } from "@/data/site";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 const description =
-  "Shubham Rajwar writes SEO content for Indian universities: blogs, landing pages and emailers for Shiv Nadar, Mahindra, BML Munjal and more.";
+  "Shubham Rajwar is an SEO and technical content writer: developer tutorials, tech and finance explainers, D2C copy and university blogs that rank.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
