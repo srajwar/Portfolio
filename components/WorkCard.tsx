@@ -35,20 +35,25 @@ export function WorkCard({ sample, priority = false }: { sample: Sample; priorit
               Read the article ↗
             </a>
           )}
-          {sample.links && (
-            <ul className="flex flex-col gap-1.5">
-              {sample.links.map((l) => (
-                <li key={l.url}>
-                  <a href={l.url} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                    {l.title} ↗
-                  </a>
-                  <span className="text-xs text-neutral-500"> · {l.format}</span>
-                </li>
-              ))}
-            </ul>
-          )}
         </div>
       </div>
+      {sample.links && (
+        <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+          {sample.links.map((l) => (
+            <li key={l.url}>
+              <a
+                href={l.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex h-full items-center justify-between gap-3 rounded-xl border border-neutral-200 px-4 py-3 text-sm font-medium text-black transition-colors hover:border-emerald-600 hover:text-emerald-700 dark:border-neutral-800 dark:text-white dark:hover:border-emerald-400 dark:hover:text-emerald-400"
+              >
+                {l.title}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
     </article>
   );
 }

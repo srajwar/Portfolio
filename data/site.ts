@@ -58,8 +58,8 @@ export const samples: Sample[] = [
   {
     slug: "hero-vired-tech-finance",
     client: "Hero Vired",
-    title: "Tech and finance explainers for Hero Vired",
-    summary: "Four articles on CI/CD pipelines, data analysis, object-oriented programming and equity research.",
+    title: "Tech and finance explainers",
+    summary: "Four articles for Hero Vired's learning hub, on programming, data and finance careers.",
     image: "/images/work/hero-vired-tech-finance.jpg",
     links: [
       { title: "What is a CI/CD pipeline?", url: "https://herovired.com/learning-hub/blogs/what-is-ci-cd-pipeline/", format: "Technical explainer" },
