@@ -1,6 +1,6 @@
 # Shubham Rajwar · Portfolio
 
-A Next.js site with one page and a working contact form backend.
+A Next.js site built on the [Nextfolio](https://github.com/3p5ilon/Nextfolio) template (MIT, see `LICENSE`), with pages for Home, Work, Experience, Contact and an optional blog, plus a working contact form backend.
 
 ## Run it locally
 
@@ -16,6 +16,10 @@ Everything visible on the site lives in `data/site.ts`: the intro, samples, traf
 
 - Numbers must come from your own tracking sheet. Set `metricsAsOf` to the month you pulled them.
 - Add a sample by copying an entry in `featuredSamples` or `moreSamples`.
+
+## Blog (optional)
+
+Drop an `.mdx` file into `content/` with `title`, `publishedAt` and `summary` in its frontmatter. The Blog link appears in the menu once there's at least one post, and RSS feeds update automatically.
 
 ## Contact form
 

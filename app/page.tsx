@@ -1,195 +1,37 @@
-import ContactForm from "@/components/ContactForm";
-import {
-  education,
-  experience,
-  featuredSamples,
-  metricsAsOf,
-  moreSamples,
-  profile,
-  project,
-  skills,
-} from "@/data/site";
+import Link from "next/link";
+import { featuredSamples, metricsAsOf, profile } from "@/data/site";
+import { SampleList } from "@/components/SampleList";
 
 const fmt = new Intl.NumberFormat("en-IN");
-const top = featuredSamples[0];
 
-export default function Home() {
+export default function Page() {
+  const top = featuredSamples[0];
   return (
-    <>
-      <header className="topbar">
-        <div className="wrap topbar-inner">
-          <a href="#top" className="brand">
-            {profile.name}
-          </a>
-          <nav aria-label="Primary">
-            <a href="#work">Work</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact" className="nav-cta">
-              Hire me
-            </a>
-          </nav>
-        </div>
-      </header>
-
-      <main id="top">
-        <section className="hero wrap">
-          <p className="eyebrow">
-            {profile.role} · {profile.location}
+    <section>
+      <p className="mb-2 text-sm text-neutral-600 dark:text-neutral-400">
+        {profile.role} · {profile.location}
+      </p>
+      <h1 className="mb-8 text-2xl font-medium title">{profile.headline}</h1>
+      <div className="prose prose-neutral dark:prose-invert">
+        <p>{profile.intro}</p>
+        {top.visits !== undefined && (
+          <p>
+            My best-performing piece, a guide for {top.client}, has brought in{" "}
+            <strong>{fmt.format(top.visits)} organic visits</strong> (as of {metricsAsOf}).
           </p>
-          <h1>{profile.headline}</h1>
-          <p className="lede">{profile.intro}</p>
-          <div className="actions">
-            <a className="btn btn-primary" href="#work">
-              See my writing
-            </a>
-            <a className="btn" href="#contact">
-              Start a project
-            </a>
-          </div>
-          {top.visits && (
-            <aside className="proof" aria-label="Best performing post">
-              <span className="proof-num">{fmt.format(top.visits)}</span>
-              <span className="proof-text">
-                organic visits to one guide I wrote for {top.client}
-                <small> · as of {metricsAsOf}</small>
-              </span>
-            </aside>
-          )}
-        </section>
+        )}
+        <p>
+          See <Link href="/work">all my work</Link>, read about{" "}
+          <Link href="/experience">where I&apos;ve worked</Link>, or{" "}
+          <Link href="/contact">tell me about your project</Link>.
+        </p>
+      </div>
 
-        <section id="work" className="section wrap">
-          <div className="section-head">
-            <h2>Writing that ranks</h2>
-            <p>
-              My best-performing SEO blogs, with organic visits and search impressions from my own
-              tracking sheet (as of {metricsAsOf}).
-            </p>
-          </div>
-          <ol className="samples">
-            {featuredSamples.map((s) => (
-              <li key={s.url} className="sample">
-                <div className="sample-meta">
-                  <span className="client">{s.client}</span>
-                  <span>
-                    {s.format}
-                    {s.published ? ` · ${s.published}` : ""}
-                  </span>
-                </div>
-                <h3>
-                  <a href={s.url} target="_blank" rel="noopener noreferrer">
-                    {s.title}
-                    <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
-                </h3>
-                {(s.visits || s.impressions) && (
-                  <dl className="metrics">
-                    {s.visits !== undefined && (
-                      <div>
-                        <dt>Organic visits</dt>
-                        <dd>{fmt.format(s.visits)}</dd>
-                      </div>
-                    )}
-                    {s.impressions && (
-                      <div>
-                        <dt>Impressions</dt>
-                        <dd>{s.impressions}</dd>
-                      </div>
-                    )}
-                  </dl>
-                )}
-              </li>
-            ))}
-          </ol>
-
-          <h3 className="sub">Tech and finance writing</h3>
-          <ul className="more">
-            {moreSamples.map((s) => (
-              <li key={s.url}>
-                <a href={s.url} target="_blank" rel="noopener noreferrer">
-                  {s.title}
-                </a>
-                <span>
-                  {s.client} · {s.format}
-                </span>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="section wrap split">
-          <div>
-            <h2>{project.title}</h2>
-            <p>{project.body}</p>
-          </div>
-          <div>
-            <h2>What I do</h2>
-            <ul className="tags">
-              {skills.map((s) => (
-                <li key={s}>{s}</li>
-              ))}
-            </ul>
-          </div>
-        </section>
-
-        <section id="experience" className="section wrap">
-          <div className="section-head">
-            <h2>Experience</h2>
-          </div>
-          <div className="timeline">
-            {experience.map((job) => (
-              <article key={job.role + job.org} className="job">
-                <div className="job-when">
-                  {job.period}
-                  <span>{job.place}</span>
-                </div>
-                <div>
-                  <h3>{job.role}</h3>
-                  <p className="org">{job.org}</p>
-                  <ul>
-                    {job.points.map((p) => (
-                      <li key={p}>{p}</li>
-                    ))}
-                  </ul>
-                </div>
-              </article>
-            ))}
-            {education.map((e) => (
-              <article key={e.title} className="job">
-                <div className="job-when">{e.year}</div>
-                <div>
-                  <h3>{e.title}</h3>
-                  <p className="org">{e.org}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section id="contact" className="section wrap split contact">
-          <div>
-            <h2>Got a page that should be ranking?</h2>
-            <p>
-              Send me the topic and who it&apos;s for. I take on blogs, landing pages, content
-              audits, technical explainers and AEO rewrites for tech, finance, education and D2C brands.
-            </p>
-            <ul className="contact-links">
-              <li>
-                <a href={`mailto:${profile.email}`}>{profile.email}</a>
-              </li>
-              <li>
-                <a href={profile.linkedin} target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-              </li>
-            </ul>
-          </div>
-          <ContactForm email={profile.email} />
-        </section>
-      </main>
-
-      <footer className="wrap footer">
-        © {new Date().getFullYear()} {profile.name}
-      </footer>
-    </>
+      <h2 className="mt-12 mb-6 text-xl font-medium">Selected writing</h2>
+      <SampleList samples={featuredSamples.slice(0, 3)} />
+      <Link href="/work" className="text-sm underline underline-offset-2 decoration-neutral-400">
+        See all work →
+      </Link>
+    </section>
   );
 }
